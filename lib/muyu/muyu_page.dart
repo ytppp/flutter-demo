@@ -61,6 +61,7 @@ class _MuyuPageState extends State<MuyuPage> with AutomaticKeepAliveClientMixin 
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
         appBar: AppBar(
           title: const Text("电子木鱼"),

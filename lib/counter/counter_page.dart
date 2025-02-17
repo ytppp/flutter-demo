@@ -32,6 +32,7 @@ class _CounterPageState extends State<CounterPage> with AutomaticKeepAliveClient
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

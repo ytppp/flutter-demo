@@ -94,6 +94,7 @@ class _GuessPageState extends State<GuessPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: GuessAppBar(
         onCheck: _onCheck,

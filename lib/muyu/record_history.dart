@@ -4,7 +4,7 @@ import 'models/merit_record.dart';
 
 class RecordHistory extends StatelessWidget {
   final List<MeritRecord> records;
-  DateFormat dateFormat = DateFormat('yyyy年MM月dd日 HH:mm:ss');
+  final DateFormat dateFormat = DateFormat('yyyy年MM月dd日 HH:mm:ss');
   
   RecordHistory({
     super.key,
