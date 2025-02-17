@@ -18,7 +18,7 @@ class _GuessPageState extends State<GuessPage>
   bool _isGuessOver = false;
   bool? _isBig;
   final Random _random = Random();
-  TextEditingController _guessCtrl = TextEditingController();
+  final TextEditingController _guessCtrl = TextEditingController();
 
   @override
   void initState() {
