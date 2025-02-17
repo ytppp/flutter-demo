@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flame_audio/flame_audio.dart';
+import 'package:flutter_demo/storage/db_storage/db_storage.dart';
 import 'package:flutter_demo/storage/sp_storage.dart';
 import 'package:uuid/uuid.dart';
 import 'models/image_option.dart';
@@ -55,6 +56,7 @@ class _MuyuPageState extends State<MuyuPage> with AutomaticKeepAliveClientMixin 
     _counter = config['counter'] ?? 0;
     _activeImageIndex = config['activeImageIndex'] ?? 0;
     _activeAudioIndex = config['activeAudioIndex'] ?? 0;
+    _records = await DbStorage.instance.meritRecordDao.query();
   }
 
   @override
@@ -182,6 +184,7 @@ class _MuyuPageState extends State<MuyuPage> with AutomaticKeepAliveClientMixin 
       );
       _counter += _cruRecord!.value;
       saveConfig();
+      DbStorage.instance.meritRecordDao.insert(_cruRecord!);
       _records.add(_cruRecord!);
     });
   }

@@ -1,3 +1,4 @@
+import 'package:flutter_demo/muyu/models/merit_record.dart';
 import 'package:sqflite/sqflite.dart';
 
 class MeritRecordDao {
@@ -19,5 +20,24 @@ class MeritRecordDao {
 
   static Future<void> createTable(Database db) async {
     return db.execute(tableSql);
+  }
+
+  Future<int> insert(MeritRecord record) {
+    return database.insert(
+      tableName,
+      record.toJson(),
+      conflictAlgorithm: ConflictAlgorithm.replace
+    );
+  }
+  
+  Future<List<MeritRecord>> query() async {
+    List<Map<String, Object?>> data = await database.query(tableName);
+    return data.map((e) => MeritRecord(
+        e['id'].toString(),
+        e['timestamp'] as int,
+        e['value'] as int,
+        e['image'].toString(),
+        e['audio'].toString()
+    )).toList();
   }
 }

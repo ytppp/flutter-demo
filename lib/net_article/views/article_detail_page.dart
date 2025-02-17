@@ -5,7 +5,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 class ArticleDetailPage extends StatefulWidget {
   final Article article;
 
-  const ArticleDetailPage({Key? key, required this.article}) : super(key: key);
+  const ArticleDetailPage({
+    super.key,
+    required this.article
+  });
 
   @override
   State<ArticleDetailPage> createState() => _ArticleDetailPageState();
@@ -13,9 +16,11 @@ class ArticleDetailPage extends StatefulWidget {
 
 class _ArticleDetailPageState extends State<ArticleDetailPage> {
   late WebViewController controller;
+
   @override
   void initState() {
     super.initState();
+    // 级联运算符 (..)允许你在同一个对象上连续调用多个方法或访问多个属性，而无需重复引用该对象
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_demo/storage/db_storage/db_storage.dart';
 import 'navigation/app_navigation.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DbStorage.instance.open(); // 打开数据库
   runApp(const MyApp());
 }
 

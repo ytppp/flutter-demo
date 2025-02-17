@@ -8,7 +8,7 @@ import '../model/article.dart';
 import 'article_detail_page.dart';
 
 class ArticleContent extends StatefulWidget {
-  const ArticleContent({Key? key}) : super(key: key);
+  const ArticleContent({super.key});
 
   @override
   State<ArticleContent> createState() => _ArticleContentState();
@@ -102,8 +102,9 @@ class ArticleItem extends StatelessWidget {
   final Article article;
   final ValueChanged<Article> onTap;
 
-  const ArticleItem({Key? key, required this.article, required this.onTap})
-      : super(key: key);
+  const ArticleItem({
+    super.key, required this.article, required this.onTap
+  });
 
   @override
   Widget build(BuildContext context) {
